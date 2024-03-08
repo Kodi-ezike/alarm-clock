@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { IoIosAlarm } from "react-icons/io";
 import sound from "./assets/alarm.mp3";
@@ -11,7 +11,6 @@ const Clock = () => {
   const [ampm, setAmpm] = useState("");
   const [minuteInput, setMinuteInput] = useState(0);
   const [hourInput, setHourInput] = useState(0);
-  const [timeInput, setTimeInput] = useState("AM");
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
@@ -23,7 +22,6 @@ const Clock = () => {
   alarmObj.alarmHour = appendZeroTimer(hourInput);
   alarmObj.alarmMinute = appendZeroTimer(minuteInput);
   alarmObj.alarmSeconds = "00";
-  alarmObj.alarmTime = timeInput;
   alarmObj.isActive = active;
 
   useEffect(() => {
